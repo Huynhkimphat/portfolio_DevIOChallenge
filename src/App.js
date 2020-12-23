@@ -2,6 +2,23 @@ import React, { Component } from "react"
 
 import "./App.css"
 
+const ProjectTypeSelector = props => (
+  <div className="type-selector">
+    <button key="all" onClick={() => props.onClick("")}>
+      All
+    </button>
+    <button key="resp" onClick={() => props.onClick("responsive")}>
+      Responsive
+    </button>
+    <button key="react" onClick={() => props.onClick("react")}>
+      React
+    </button>
+    <button key="js" onClick={() => props.onClick("javascript")}>
+      JavaScript
+    </button>
+  </div>
+)
+
 const ProjectCards = props => (
   <div className="project-set">
     {props.displayedProjects.map(project => (
@@ -16,11 +33,14 @@ const ProjectCards = props => (
 )
 
 const Breadcrumbs = props => {
-  console.log(props)
-  const nbBreadcrumbs = Math.ceil(props.totalProjects.length / 3)
+  const nbBreadcrumbs = Math.ceil(props.selectedProjects.length / 3)
   let buttons = []
   for (let i = 1; i <= nbBreadcrumbs; i++) {
-    buttons.push(<button key={i} onClick={() => props.onClick(i)} >Page {i}</button>)
+    buttons.push(
+      <button key={i} onClick={() => props.onClick(i)}>
+        Page {i}
+      </button>
+    )
   }
   return buttons
 }
@@ -34,7 +54,7 @@ class App extends Component {
           id: 1,
           title: "404 Not Found",
           imageUrl: "404.png",
-          type: "html-css",
+          type: "responsive",
         },
         {
           id: 2,
@@ -46,19 +66,19 @@ class App extends Component {
           id: 3,
           title: "Interior Consultant",
           imageUrl: "interior-consultant.png",
-          type: "html-css",
+          type: "responsive",
         },
         {
           id: 4,
           title: "Recipe Page",
           imageUrl: "recipe-page.png",
-          type: "html-css",
+          type: "responsive",
         },
         {
           id: 5,
           title: "My Gallery",
           imageUrl: "my-gallery.png",
-          type: "html-css",
+          type: "responsive",
         },
         {
           id: 6,
@@ -70,7 +90,7 @@ class App extends Component {
           id: 7,
           title: "Edie Homepage",
           imageUrl: "edie-homepage.png",
-          type: "html-css",
+          type: "responsive",
         },
         {
           id: 8,
@@ -85,12 +105,24 @@ class App extends Component {
           type: "javascript",
         },
       ],
-      page: 1
+      selectedProjects: [],
+      page: 1,
     }
   }
 
-  pageBtnClickHandler = (pageToDisplay) => {
-    console.log("affiche-moi la page", pageToDisplay)
+  componentDidMount() {
+    const pr = [...this.state.projects]
+    this.setState(state => (state = { selectedProjects: pr }))
+  }
+
+  typeSelectorClickHandler = typeToDisplay => {
+    const pr = typeToDisplay === "" ? [...this.state.projects] :
+    this.state.projects.filter(project => project.type === typeToDisplay)
+    console.log('typeSelectorClickHandler', pr)
+    this.setState(state => (state = { selectedProjects: pr }))
+  }
+
+  pageBtnClickHandler = pageToDisplay => {
     this.setState(state => (state = { page: pageToDisplay }))
   }
 
@@ -98,14 +130,19 @@ class App extends Component {
     // const reactProjects = this.state.projects.filter(project => project.type === "react")
     // const cssProjects = this.state.projects.filter(project => project.type === "html-css")
     // const jsProjects = this.state.projects.filter(project => project.type === "javascript")
-    const displayedProjects = this.state.projects.slice(
+    const displayedProjects = this.state.selectedProjects.slice(
       (this.state.page - 1) * 3,
       (this.state.page - 1) * 3 + 3
     )
+    console.log(this.state)
     return (
       <React.Fragment>
+        <ProjectTypeSelector onClick={this.typeSelectorClickHandler} />
         <ProjectCards displayedProjects={displayedProjects} />
-        <Breadcrumbs totalProjects={this.state.projects} onClick={this.pageBtnClickHandler} />
+        <Breadcrumbs
+          selectedProjects={this.state.selectedProjects}
+          onClick={this.pageBtnClickHandler}
+        />
       </React.Fragment>
     )
   }
