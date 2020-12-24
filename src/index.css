@@ -112,23 +112,66 @@ header p {
 	border-radius: 12px;
 }
 #css-meter {
-  animation: progress-css 2s ease-out;
+	animation: progress-css 2s ease-in;
 }
 #js-meter {
-  animation: progress-js 2s ease-out;
+	animation: progress-js 2s ease-in;
 }
 #react-meter {
-  animation: progress-react 2s ease-out;
+	animation: progress-react 2s ease-in;
 }
 @keyframes progress-css {
-	from {width: 0;}
-	to {width: 75%;}
+	from {
+		width: 0;
+	}
+	to {
+		width: 55%;
+	}
 }
 @keyframes progress-js {
-	from {width: 0;}
-	to {width: 55%;}
+	from {
+		width: 0;
+	}
+	to {
+		width: 35%;
+	}
 }
 @keyframes progress-react {
-	from {width: 0;}
-	to {width: 25%;}
+	from {
+		width: 0;
+	}
+	to {
+		width: 15%;
+	}
+}
+
+.projects-header h1 {
+	font-weight: 500;
+	font-size: 18px;
+  color: var(--gray2);
+  margin-bottom: 16px;
+}
+button {
+  appearance: none;
+  outline: none;
+	font-family: Montserrat;
+	font-style: normal;
+	font-weight: 500;
+	font-size: 14px;
+	color: var(--gray2);
+	padding: 8px 22px;
+	border: 1px solid var(--gray2);
+	border-radius: 12px;
+	background: white;
+	margin-right: 16px;
+	cursor: pointer;
+}
+button:hover {
+	border-color: var(--blue);
+	color: var(--blue);
+}
+button.active {
+	background: var(--blue);
+	color: white;
+	border: none;
 }

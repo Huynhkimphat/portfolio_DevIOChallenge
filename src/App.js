@@ -4,10 +4,10 @@ import "./App.css"
 
 const ProjectTypeSelector = props => (
 	<div className="type-selector">
-		<button onClick={() => props.onClick("")}>All</button>
-		<button onClick={() => props.onClick("responsive")}>Responsive</button>
-		<button onClick={() => props.onClick("javascript")}>JavaScript</button>
-		<button onClick={() => props.onClick("react")}>React</button>
+		<button onClick={e => props.onClick(e, "all")}>All</button>
+		<button onClick={e => props.onClick(e, "responsive")}>Responsive</button>
+		<button onClick={e => props.onClick(e, "javascript")}>JavaScript</button>
+		<button onClick={e => props.onClick(e, "react")}>React</button>
 	</div>
 )
 
@@ -15,9 +15,7 @@ const ProjectCards = props => (
 	<div className="project-set">
 		{props.displayedProjects.map(project => (
 			<div className="card" key={project.id}>
-				<h3>
-					{project.title} (project #{project.id})
-				</h3>
+				<h3>{project.title}</h3>
 				<img
 					src={`img/${project.imageUrl}`}
 					alt={project.title}
@@ -34,11 +32,11 @@ const Breadcrumbs = props => {
 	for (let i = 1; i <= nbBreadcrumbs; i++) {
 		buttons.push(
 			<button key={i} onClick={() => props.onClick(i)}>
-				Page {i}
+				{i}
 			</button>
 		)
 	}
-	return buttons
+	return <div className="breadcrumbs">{buttons}</div>
 }
 
 class App extends Component {
@@ -136,12 +134,25 @@ class App extends Component {
 		this.setState(state => (state = { selectedProjects: pr }))
 	}
 
-	typeSelectorClickHandler = typeToDisplay => {
+	componentDidUpdate() {
+		document.querySelectorAll(".breadcrumbs button").forEach(btn => {
+			btn.className = parseInt(btn.innerText) === this.state.page ? "active" : ""
+		})
+	}
+
+	typeSelectorClickHandler = (e, typeToDisplay) => {
 		const pr =
-			typeToDisplay === ""
+			typeToDisplay === "all"
 				? [...this.state.projects]
 				: this.state.projects.filter(project => project.type === typeToDisplay)
-		this.setState(state => (state = { selectedProjects: pr, page: 1 }))
+		this.setState(
+			state =>
+				(state = { selectedProjects: pr, page: 1, selectedType: typeToDisplay })
+		)
+		document
+			.querySelectorAll(".projects-header button")
+			.forEach(btn => (btn.className = ""))
+		e.target.className = "active"
 	}
 
 	pageBtnClickHandler = pageToDisplay => {
