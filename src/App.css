@@ -1,3 +1,4 @@
 .project-set {
   display: flex;
+  color: var(--gray1);
 }

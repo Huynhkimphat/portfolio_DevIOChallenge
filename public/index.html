@@ -1,43 +1,80 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="theme-color" content="#000000" />
-    <meta
-      name="description"
-      content="Web site created using create-react-app"
-    />
-    <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
-    <!--
-      manifest.json provides metadata used when your web app is installed on a
-      user's mobile device or desktop. See https://developers.google.com/web/fundamentals/web-app-manifest/
-    -->
-    <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
-    <!--
-      Notice the use of %PUBLIC_URL% in the tags above.
-      It will be replaced with the URL of the `public` folder during the build.
-      Only files inside the `public` folder can be referenced from the HTML.
+	<head>
+		<meta charset="utf-8" />
+		<link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<meta name="theme-color" content="#000000" />
+		<meta
+			name="description"
+			content="Web site created using create-react-app"
+		/>
+		<link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
+		<link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
 
-      Unlike "/favicon.ico" or "favicon.ico", "%PUBLIC_URL%/favicon.ico" will
-      work correctly both with client-side routing and a non-root public URL.
-      Learn how to configure a non-root public URL by running `npm run build`.
-    -->
-    <title>React App</title>
-  </head>
-  <body>
-    <noscript>You need to enable JavaScript to run this app.</noscript>
-    <div id="root"></div>
-    <!--
-      This HTML file is a template.
-      If you open it directly in the browser, you will see an empty page.
+		<link rel="preconnect" href="https://fonts.gstatic.com" />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700&display=swap"
+			rel="stylesheet"
+		/>
+		<link
+			href="https://fonts.googleapis.com/icon?family=Material+Icons"
+			rel="stylesheet"
+		/>
 
-      You can add webfonts, meta tags, or analytics to this file.
-      The build step will place the bundled scripts into the <body> tag.
+		<title>Portfolio</title>
 
-      To begin the development, run `npm start` or `yarn start`.
-      To create a production bundle, use `npm run build` or `yarn build`.
-    -->
-  </body>
+		<link rel="stylesheet" href="style.css" />
+	</head>
+	<body>
+		<div class="container">
+			<header class="card">
+				<img src="./img/antoine500px.jpg" alt="Antoine Terny" />
+				<div class="header-text">
+					<div class="header-header">
+						<div class="person">
+							<h1>Antoine Terny</h1>
+							<p>Front-end developer</p>
+						</div>
+						<div class="coordonnees">
+							<p><i class="material-icons">email</i>antoine.terny@yahoo.fr</p>
+							<p><i class="material-icons">phone</i>01 23 45 67 89</p>
+						</div>
+					</div>
+					<p>
+						Self-motivated developer, who is willing to learn and create
+						outstanding UI applications.
+						<br /><br />
+						Donec aliquam est dui, vel vestibulum diam sollicitudin id. Quisque
+						feugiat malesuada molestie.
+					</p>
+				</div>
+			</header>
+
+			<div class="skills card">
+				<h2>Front end</h2>
+				<div class="skill-level">
+					<h6>CSS</h6>
+					<div class="skill-meter">
+						<span id="css-meter" style="width: 75%;"></span>
+					</div>
+				</div>
+				<div class="skill-level">
+					<h6>JavaScript</h6>
+					<div class="skill-meter">
+						<span id="js-meter" style="width: 55%;"></span>
+					</div>
+				</div>
+				<div class="skill-level">
+					<h6>React</h6>
+					<div class="skill-meter">
+						<span id="react-meter" style="width: 25%;"></span>
+					</div>
+				</div>
+			</div>
+
+			<noscript>You need to enable JavaScript to run this app.</noscript>
+			<div id="root"></div>
+		</div>
+	</body>
 </html>
