@@ -1,177 +1,177 @@
 :root {
-	--gray1: #333333;
-	--gray2: #4f4f4f;
-	--gray3: #828282;
-	--gray4: #c4c4c4;
-	--blue: #5c94e1;
+  --gray1: #333333;
+  --gray2: #4f4f4f;
+  --gray3: #828282;
+  --gray4: #c4c4c4;
+  --blue: #5c94e1;
 }
 
 * {
-	margin: 0;
-	padding: 0;
-	box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 body {
-	font-family: "Montserrat", -apple-system, BlinkMacSystemFont, "Segoe UI",
-		"Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans",
-		"Helvetica Neue", sans-serif;
-	-webkit-font-smoothing: antialiased;
-	-moz-osx-font-smoothing: grayscale;
-	background-color: #f2f2f2;
-	color: var(--gray3);
-	padding: 50px;
+  font-family: "Montserrat", -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: #f2f2f2;
+  color: var(--gray3);
+  padding: 50px;
 }
 
 .card {
-	background: #ffffff;
-	box-shadow: 0px 4px 32px rgba(0, 0, 0, 0.12);
-	border-radius: 12px;
-	padding: 22px 26px;
-	margin-bottom: 42px;
+  background: #ffffff;
+  box-shadow: 0px 4px 32px rgba(0, 0, 0, 0.12);
+  border-radius: 12px;
+  padding: 22px 26px;
+  margin-bottom: 42px;
 }
 .container {
-	max-width: 1200px;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 header {
-	display: flex;
+  display: flex;
 }
 header img {
-	width: 270px;
-	border-radius: 12px;
+  width: 270px;
+  border-radius: 12px;
 }
 header p {
-	font-style: normal;
-	font-weight: 500;
-	font-size: 18px;
-	line-height: 22px;
-	color: var(--gray3);
+  font-style: normal;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 22px;
+  color: var(--gray3);
 }
 .header-text {
-	width: 100%;
-	margin: 0 16px 0 32px;
+  width: 100%;
+  margin: 0 16px 0 32px;
 }
 .header-header {
-	display: flex;
-	justify-content: space-between;
-	margin-bottom: 37px;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 37px;
 }
 
 .person h1 {
-	color: var(--gray2);
-	font-style: normal;
-	font-weight: 600;
-	font-size: 24px;
-	line-height: 29px;
-	margin-bottom: 6px;
+  color: var(--gray2);
+  font-style: normal;
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 29px;
+  margin-bottom: 6px;
 }
 .person p {
-	color: var(--gray3);
+  color: var(--gray3);
 }
 .coordonnees {
-	color: var(--gray2);
-	line-height: 30px;
+  color: var(--gray2);
+  line-height: 30px;
 }
 .coordonnees i {
-	margin-right: 18px;
-	transform: translateY(28%);
+  margin-right: 18px;
+  transform: translateY(28%);
 }
 
 .skills h2 {
-	font-weight: bold;
-	font-size: 18px;
-	line-height: 22px;
-	text-transform: uppercase;
-	margin-bottom: 16px;
-	color: var(--gray2);
+  font-weight: bold;
+  font-size: 18px;
+  line-height: 22px;
+  text-transform: uppercase;
+  margin-bottom: 16px;
+  color: var(--gray2);
 }
 
 .skill-level {
-	display: flex;
-	justify-content: space-between;
-	align-items: baseline;
-	margin-bottom: 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-bottom: 16px;
 }
 .skill-level h6 {
-	font-weight: 500;
-	font-size: 16px;
-	line-height: 20px;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 20px;
 }
 .skill-meter {
-	position: relative;
-	width: 90%;
-	height: 9px;
-	background: var(--gray4);
-	border-radius: 12px;
-	overflow: hidden;
+  position: relative;
+  width: 90%;
+  height: 9px;
+  background: var(--gray4);
+  border-radius: 12px;
+  overflow: hidden;
 }
 .skill-meter span {
-	display: block;
-	height: 9px;
-	background: var(--blue);
-	border-radius: 12px;
+  display: block;
+  height: 9px;
+  background: var(--blue);
+  border-radius: 12px;
 }
 #css-meter {
-	animation: progress-css 2s ease-in;
+  animation: progress-css 2s ease-in;
 }
 #js-meter {
-	animation: progress-js 2s ease-in;
+  animation: progress-js 2s ease-in;
 }
 #react-meter {
-	animation: progress-react 2s ease-in;
+  animation: progress-react 2s ease-in;
 }
 @keyframes progress-css {
-	from {
-		width: 0;
-	}
-	to {
-		width: 55%;
-	}
+  from {
+    width: 0;
+  }
+  to {
+    width: 55%;
+  }
 }
 @keyframes progress-js {
-	from {
-		width: 0;
-	}
-	to {
-		width: 35%;
-	}
+  from {
+    width: 0;
+  }
+  to {
+    width: 35%;
+  }
 }
 @keyframes progress-react {
-	from {
-		width: 0;
-	}
-	to {
-		width: 15%;
-	}
+  from {
+    width: 0;
+  }
+  to {
+    width: 15%;
+  }
 }
 
 .projects-header h1 {
-	font-weight: 500;
-	font-size: 18px;
+  font-weight: 500;
+  font-size: 18px;
   color: var(--gray2);
   margin-bottom: 16px;
 }
 button {
   appearance: none;
   outline: none;
-	font-family: Montserrat;
-	font-style: normal;
-	font-weight: 500;
-	font-size: 14px;
-	color: var(--gray2);
-	padding: 8px 22px;
-	border: 1px solid var(--gray2);
-	border-radius: 12px;
-	background: white;
-	margin-right: 16px;
-	cursor: pointer;
+  font-family: Montserrat;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  color: var(--gray2);
+  padding: 8px 22px;
+  border: 1px solid var(--gray2);
+  border-radius: 12px;
+  background: white;
+  margin-right: 16px;
+  cursor: pointer;
 }
 button:hover {
-	border-color: var(--blue);
-	color: var(--blue);
+  border-color: var(--blue);
+  color: var(--blue);
 }
 button.active {
-	background: var(--blue);
-	color: white;
-	border: none;
+  background: var(--blue);
+  color: white;
+  border: none;
 }
