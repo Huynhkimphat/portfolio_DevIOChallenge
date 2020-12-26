@@ -121,3 +121,31 @@
   background: var(--blue);
   color: white;
 }
+
+@media (max-width: 1100px) {
+  #project-set {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(3, 1fr);
+    gap: 0;
+    color: var(--gray1);
+  }
+  .project-content {
+    position: relative;
+  }
+  .project-card {
+    display: flex;
+  }
+  .project-card img {
+    width: 322px;
+    height: 274px;
+    margin-right: 34px;
+  }
+  .project-card p {
+    margin-bottom: 20px;
+  }
+  .project-card-footer {
+    bottom: 4px;
+    left: 0;
+  }
+}

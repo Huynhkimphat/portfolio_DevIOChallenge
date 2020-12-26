@@ -18,16 +18,18 @@ const ProjectCards = props => (
         <a href={project.demoUrl}>
           <img src={`img/${project.imageUrl}`} alt={project.title} />
         </a>
-        <h5>#{project.type}</h5>
-        <h3>{project.title}</h3>
-        <p>{project.text}</p>
-        <div className="project-card-footer">
-          <a href={project.demoUrl} className="demo">
-            Demo
-          </a>
-          <a href={project.codeUrl} className="code">
-            Code
-          </a>
+        <div className="project-content">
+        	<h5>#{project.type}</h5>
+        	<h3>{project.title}</h3>
+        	<p>{project.text}</p>
+        	<div className="project-card-footer">
+        	  <a href={project.demoUrl} className="demo">
+        	    Demo
+        	  </a>
+        	  <a href={project.codeUrl} className="code">
+        	    Code
+        	  </a>
+        	</div>
         </div>
       </div>
     ))}
@@ -57,7 +59,7 @@ const Breadcrumbs = props => {
     )
   }
   buttons.push(
-    <button key={"prevPage"} onClick={() => props.onClick(nextPage)}>
+    <button key={"nextPage"} onClick={() => props.onClick(nextPage)}>
       &gt;
     </button>
   )
@@ -95,7 +97,7 @@ class App extends Component {
           imageUrl: "recipe-page.png",
           type: "responsive",
           text:
-            "A cool classic challenge.<br>It was not easy to keep the html lightweight in order to replicate the layout.",
+            "A cool classic challenge. It was not easy to keep the html lightweight in order to replicate the layout.",
           demoUrl: "https://devchallenges-recipe-page-master.vercel.app/",
           codeUrl: "https://github.com/antoineterny/devchallenges-recipe-page-master",
         },
@@ -126,7 +128,7 @@ class App extends Component {
           imageUrl: "my-team-page.png",
           type: "react",
           text:
-            "This project didn't take me a long time because it doesn't contain many elements, but required me to think about the responsiveness. I chose to use grid because of the offsetted cards.<br>I also used React, just to generate the cards.",
+            "This project didn't take me a long time because it doesn't contain many elements, but required me to think about the responsiveness. I chose to use grid because of the offsetted cards. I also used React, just to generate the cards.",
           demoUrl: "https://devchallenges-my-team-page-master.vercel.app/",
           codeUrl: "https://github.com/antoineterny/devchallenges-my-team-page-master",
         },
@@ -146,7 +148,7 @@ class App extends Component {
           imageUrl: "partoche-etude.png",
           type: "javascript",
           text:
-            "Conçu pour l'apprentissage d'un morceau de piano, on peut régler le mixage entre la main gauche et la main droite, et activer ou non le métronome. L'idée est de répéter chaque section du morceau de plus en plus vite, mains séparément en écoutant l'autre main, ou la même, ou les deux...",
+            "Conçu pour l'apprentissage d'un morceau de piano, on peut régler le mixage entre la main gauche et la main droite, et activer ou non le métronome. ",
           demoUrl: "https://antoineterny.com/partoche/partoche-etude/rustique/index.html",
           codeUrl: "https://github.com/antoineterny/partoche",
         },
@@ -166,7 +168,7 @@ class App extends Component {
           imageUrl: "partoche-choral.png",
           type: "javascript",
           text:
-            "Conçu pour aider les choristes dans leur préparation individuelle entre deux répétitions (ou en temps de confinement...), on entend toujours l'accompagnement sur lequel on ajoute la voix qu'on souhaite apprendre, qui se retrouve surlignée dans la partition.",
+            "Conçu pour aider les choristes dans leur préparation individuelle, on entend toujours l'accompagnement sur lequel on ajoute la voix qu'on souhaite apprendre, qui se retrouve surlignée dans la partition.",
           demoUrl: "https://antoineterny.com/partoche/partoche-choral/samson/index.html",
           codeUrl: "https://github.com/antoineterny/partoche",
         },
@@ -197,6 +199,16 @@ class App extends Component {
           type: "javascript",
           text:
             "My very first JS project, it fetches data from John Hopkins University, then displays it with the help of rafael.js (I converted it later to snap.svg)",
+          demoUrl: "https://antoineterny.com/cocosnap/",
+          codeUrl: "https://github.com/antoineterny/cocoSnap",
+        },
+        {
+          id: 14,
+          title: "Portfolio",
+          imageUrl: "portfolio.png",
+          type: "react",
+          text:
+            "This very page. React is used to display the projects at the bottom of the page.",
           demoUrl: "https://antoineterny.com/cocosnap/",
           codeUrl: "https://github.com/antoineterny/cocoSnap",
         },
