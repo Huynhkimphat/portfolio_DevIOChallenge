@@ -12,7 +12,7 @@ const ProjectTypeSelector = props => (
 )
 
 const ProjectCards = props => (
-  <div className="project-set">
+  <div id="project-set">
     {props.displayedProjects.map(project => (
       <div className="card project-card" key={project.id}>
         <a href={project.demoUrl}>
@@ -36,7 +36,19 @@ const ProjectCards = props => (
 
 const Breadcrumbs = props => {
   const nbBreadcrumbs = Math.ceil(props.selectedProjects.length / 3)
-  let buttons = []
+  const previousPage = 
+    props.currentPage === 1 
+    ? nbBreadcrumbs
+    : props.currentPage - 1
+  const nextPage = 
+    props.currentPage === nbBreadcrumbs 
+    ? 1 
+    : props.currentPage + 1
+  let buttons = [
+    <button key={"prevPage"} onClick={() => props.onClick(previousPage)}>
+      &lt;
+    </button>,
+  ]
   for (let i = 1; i <= nbBreadcrumbs; i++) {
     buttons.push(
       <button key={i} onClick={() => props.onClick(i)}>
@@ -44,6 +56,11 @@ const Breadcrumbs = props => {
       </button>
     )
   }
+  buttons.push(
+    <button key={"prevPage"} onClick={() => props.onClick(nextPage)}>
+      &gt;
+    </button>
+  )
   return <div className="breadcrumbs">{buttons}</div>
 }
 
@@ -124,12 +141,6 @@ class App extends Component {
           codeUrl: "https://github.com/antoineterny/devchallenges-404-not-found-master",
         },
         {
-          id: 8,
-          title: "Cocosnap",
-          imageUrl: "cocosnap.png",
-          type: "javascript",
-        },
-        {
           id: 9,
           title: "Partoche-Etude",
           imageUrl: "partoche-etude.png",
@@ -156,7 +167,7 @@ class App extends Component {
           type: "javascript",
           text:
             "Conçu pour aider les choristes dans leur préparation individuelle entre deux répétitions (ou en temps de confinement...), on entend toujours l'accompagnement sur lequel on ajoute la voix qu'on souhaite apprendre, qui se retrouve surlignée dans la partition.",
-          demoUrl: "hhttps://antoineterny.com/partoche/partoche-choral/samson/index.html",
+          demoUrl: "https://antoineterny.com/partoche/partoche-choral/samson/index.html",
           codeUrl: "https://github.com/antoineterny/partoche",
         },
         {
@@ -178,6 +189,16 @@ class App extends Component {
             "Conçu pour préparer un morceau de piano à quatre mains, on peut régler le mixage entre les deux parties, et les deux partitions sont affichées.",
           demoUrl: "https://antoineterny.com/partoche/partoche-duo/mmo/index.html",
           codeUrl: "https://github.com/antoineterny/partoche",
+        },
+        {
+          id: 8,
+          title: "Cocosnap",
+          imageUrl: "cocosnap.png",
+          type: "javascript",
+          text:
+            "My very first JS project, it fetches data from John Hopkins University, then displays it with the help of rafael.js (I converted it later to snap.svg)",
+          demoUrl: "https://antoineterny.com/cocosnap/",
+          codeUrl: "https://github.com/antoineterny/cocoSnap",
         },
       ],
       selectedProjects: [],
@@ -225,6 +246,7 @@ class App extends Component {
         <ProjectCards displayedProjects={displayedProjects} />
         <Breadcrumbs
           selectedProjects={this.state.selectedProjects}
+          currentPage={this.state.page}
           onClick={this.pageBtnClickHandler}
         />
       </React.Fragment>
