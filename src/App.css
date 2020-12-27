@@ -183,3 +183,34 @@
     margin-bottom: 0;
   }
 }
+
+@media (min-width: 1300px) {
+  #project-set {
+    display: flex;
+    flex-direction: column;
+  }
+  .project-card-footer {
+    position: static;
+    margin-top: 2em;
+  }
+  .project-card {
+    display: flex;
+  }
+  .project-card img {
+    width: 322px;
+    height: 100%;
+    margin-right: 34px;
+  }
+  .project-content {
+    min-height: unset;
+  }
+  .project-content p {
+    margin-bottom: 0;
+  }
+  .project-card {
+    margin-top: 0;
+  }
+  .breadcrumbs {
+    margin-bottom: 42px;
+  }
+}
