@@ -4,14 +4,17 @@
   font-family: Montserrat;
   font-style: normal;
   font-weight: 500;
-  font-size: 14px;
+  font-size: 1.4rem;
   color: var(--gray2);
   padding: 8px 22px;
   border: 1px solid var(--gray2);
   border-radius: 12px;
   background: white;
-  margin-right: 16px;
+  margin: 6px 16px 6px 0;
   cursor: pointer;
+}
+.type-selector button:last-of-type {
+  margin-right: 0;
 }
 .type-selector button:hover {
   border-color: var(--blue);
@@ -46,7 +49,7 @@
 
 .project-card h5 {
   font-weight: 500;
-  font-size: 16px;
+  font-size: 1.6rem;
   line-height: 20px;
   color: var(--gray2);
   margin: 22px 0;
@@ -54,14 +57,14 @@
 
 .project-card h3 {
   font-weight: 500;
-  font-size: 24px;
+  font-size: 2.4rem;
   line-height: 29px;
   color: var(--gray1);
   margin-bottom: 18px;
 }
 .project-card p {
   font-weight: 500;
-  font-size: 16px;
+  font-size: 1.6rem;
   line-height: 20px;
   color: var(--gray3);
   margin-bottom: 100px;
@@ -75,7 +78,7 @@
   display: inline-block;
   text-decoration: none;
   font-weight: 500;
-  font-size: 18px;
+  font-size: 1.8rem;
   line-height: 22px;
   color: var(--gray3);
   padding: 12px 38px;
@@ -110,7 +113,7 @@
   /* background: transparent; */
   border: 1px solid var(--gray2);
   border-radius: 4px;
-  font-size: 12px;
+  font-size: 1.2rem;
   color: var(--gray2);
   margin: 0 0 0 12px;
   padding: unset;
@@ -147,5 +150,36 @@
   .project-card-footer {
     bottom: 4px;
     left: 0;
+  }
+}
+
+@media (max-width: 890px) {
+  .project-card img {
+    width: 30vw;
+    margin-right: 24px;
+  }
+}
+
+@media (max-width: 720px) {
+  #project-set {
+    display: flex;
+    flex-direction: column;
+  }
+  .project-card-footer {
+    position: static;
+    margin-top: 2em;
+  }
+  .project-card {
+    display: block;
+  }
+  .project-card img {
+    width: 100%;
+    height: 200px;
+  }
+  .project-content {
+    min-height: unset;
+  }
+  .project-content p {
+    margin-bottom: 0;
   }
 }
