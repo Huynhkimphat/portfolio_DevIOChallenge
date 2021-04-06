@@ -7,11 +7,11 @@
 
 <div align="center">
   <h3>
-    <a href="https://devchallenges-portfolio-two.vercel.app/">
+    <a href="">
       Demo
     </a>
     <span> | </span>
-    <a href="https://github.com/antoineterny/devchallenges-portfolio">
+    <a href="">
       Solution
     </a>
     <span> | </span>
@@ -25,21 +25,18 @@
 
 ## Table of Contents
 
+- [Table of Contents](#table-of-contents)
 - [Overview](#overview)
 - [Features](#features)
-- [How to use](#how-to-use)
-- [Contact](#contact)
+- [How To Use](#how-to-use)
 - [Acknowledgements](#acknowledgements)
+- [Contact](#contact)
 
 <!-- OVERVIEW -->
 
 ## Overview
 
-[![screenshot](screenshot.png)](https://devchallenges-portfolio-two.vercel.app/)
 
-The challenge path's final boss !  
-I first created a react app to display my projects. I'm feeling more and more confident with React's logic.  
-I then had fun with grids and subgrids, and used seven breakpoints ! If I knew in advance I would use so many, I would have created responsive classes, which I didn't. That's how you gain experience isn't it ?
 
 ## Features
 
@@ -66,12 +63,6 @@ $ npm start
 
 ## Acknowledgements
 
-<!-- This section should list any articles or add-ons/plugins that helps you to complete the project. This is optional but it will help you in the future. For example -->
-
-- [Steps to replicate a design with only HTML and CSS](https://devchallenges-blogs.web.app/how-to-replicate-design/)
-Which I didn't follow enough, at least the first part, thinking about the responsiveness in advance. Lesson learnt !
-
 ## Contact
 
-- Website [antoineteny.com](https://antoineterny.com/)
-- GitHub [@antoineterny](https://github.com/antoineterny/)
+- GitHub [@HuynhKimphat](https://github.com/Huynhkimphat/)
